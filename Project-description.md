@@ -1,97 +1,107 @@
-# Proyecto: Portafolio de Aventura
+# Project: Adventure Portfolio
 
-## Descripción General
+## General Description
 
-El proyecto es una página web personal que encapsule toda mi actividad visual, presentando tanto fotografías profesionales como capturas casuales de aventuras. El objetivo es que el sitio permita organizar y mostrar imágenes en dos categorías principales:
+The project is a personal website that encapsulates all my visual activity, showcasing both professional photographs and casual adventure captures. The goal is for the site to organize and display images in two main categories:
 
-1. **Álbumes Profesionales**: 
-   - Colección de fotos editadas y seleccionadas, agrupadas por momentos específicos y almacenadas como contenido estático en el framework de Astro.
-   - Cada álbum incluye texto descriptivo para personalizar cada momento.
-   - Necesito una optimización de imágenes para evitar sobrecargar la página, ya que las fotos suelen tener un alto peso.
+1. **Professional Albums**:
+   - Collection of edited and selected photos, grouped by specific moments and stored as static content in the Astro framework.
+   - Each album includes descriptive text to personalize each moment.
+   - I need image optimization to avoid overloading the page, as the photos tend to be large.
 
-2. **Aventuras Casuales**:
-   - Imágenes capturadas con el celular, organizadas cronológicamente y presentadas en un **timeline** que permite una navegación visual por las aventuras según la fecha.
-   - Estas fotos tienen metadata (ubicación, fecha, hora) que facilita su organización y serán extraídas desde Google Photos.
-   - Necesito un layout dinámico para que la presentación visual sea variada y atractiva, no solo una cuadrícula rectangular.
+2. **Casual Adventures**:
+   - Images captured with a phone, organized chronologically and presented in a **timeline** that allows visual navigation through adventures by date.
+   - These photos have metadata (location, date, time) that facilitates their organization and will be extracted from Google Photos.
+   - I need a dynamic layout so that the visual presentation is varied and attractive, not just a rectangular grid.
 
-**Funcionalidad Adicional (a largo plazo)**:
-- Un **Mapa de Aventuras** donde pueda visualizar las ubicaciones de diferentes fotos, permitiendo al usuario hacer clic en un pin para abrir un álbum o una aventura.
-
----
-
-## Objetivos
-
-1. **Mostrar contenido visual en un entorno personalizado**, organizado y estructurado en categorías que lo hagan fácil de explorar.
-2. **Optimizar las imágenes** para una carga rápida sin comprometer la calidad visual.
-3. **Mantener el sitio ligero** y de fácil actualización para añadir o quitar contenido sin mucho esfuerzo.
-4. **Presentar las aventuras en un timeline** de desplazamiento intuitivo, aprovechando la metadata de las fotos.
-5. **Implementar un sistema de mapas interactivos** en el que los usuarios puedan explorar mis aventuras por ubicación.
+**Additional Functionality (long-term)**:
+- An **Adventure Map** where I can visualize the locations of different photos, allowing the user to click on a pin to open an album or an adventure.
 
 ---
 
-## Pasos a Seguir
+## Objectives
 
-### 1. Configuración Básica del Proyecto en Astro
-   - Inicializar el proyecto en Astro.
-   - Crear rutas para las secciones principales:
-     - **Inicio**
-     - **Álbumes** (contenido estático)
-     - **Aventuras** (timeline dinámico).
-   - Configurar el directorio de contenido para almacenar las fotos profesionales.
-
-### 2. Integración con Google Photos para Aventuras
-   - **Conectar la API de Google Photos** para extraer fotos con metadata.
-   - Organizar las fotos según la fecha y agruparlas en “aventuras” en la sección del timeline.
-   - Crear un componente de timeline para que el usuario pueda desplazarse cronológicamente y ver aventuras según la fecha.
-
-### 3. Optimización de Imágenes
-   - **Fotos Profesionales**:
-     - Comprimir y reducir la resolución de imágenes grandes para evitar ralentizar el sitio.
-     - Implementar `lazy loading` en Astro para que las imágenes se carguen según el scroll del usuario.
-   - **Fotos desde Google Photos**:
-     - Usar las opciones de la API para solicitar versiones de menor resolución.
-
-### 4. Diseño del Layout y Variación en la Galería de Fotos
-   - **Diseño de Galería Aleatorio**:
-     - Crear un layout más “libre” o tipo collage que varíe tamaños y posiciones para evitar un diseño estático.
-     - Explorar layouts de “Masonry” o utilizar una rejilla CSS adaptativa.
-   - **Animación de Scroll**:
-     - Implementar efectos de transición para que las aventuras se muestren progresivamente al desplazarse.
-
-### 5. Mapa de Aventuras (Funcionalidad Avanzada)
-   - **Integración de un Mapa Interactivo**:
-     - Usar Mapbox o Leaflet para crear un mapa que marque ubicaciones de las aventuras.
-     - Configurar el mapa para que al hacer clic en un pin se abra el álbum o la aventura correspondiente.
-
-### 6. Agregar Texto Personalizado y Detalles de la Historia
-   - **Escritura de Historias**:
-     - En cada álbum y aventura, agregar títulos, descripciones y otros detalles personalizados.
-     - Los textos de los álbumes profesionales estarán en archivos `.md`, mientras que en las aventuras podría integrarse desde la metadata o una base de datos.
-
-### 7. Ajustes Finales y Estilización
-   - Realizar ajustes finales en el diseño para garantizar que la experiencia sea visualmente atractiva.
-   - Implementar diseño responsive para asegurar que funcione tanto en dispositivos móviles como en desktops.
+1. **Display visual content in a personalized environment**, organized and structured in categories that make it easy to explore.
+2. **Optimize images** for fast loading without compromising visual quality.
+3. **Keep the site lightweight** and easy to update to add or remove content without much effort.
+4. **Present adventures in an intuitive scrolling timeline**, leveraging the metadata of the photos.
+5. **Implement an interactive map system** where users can explore my adventures by location.
 
 ---
 
-## Requisitos Técnicos y Herramientas
+## Steps to Follow
 
-- **Framework**: Astro, para facilitar la gestión de contenido estático.
-- **Autenticación**: Configurar autenticación para la API de Google Photos y asegurar un flujo de extracción de datos.
-- **Optimización de Imágenes**: Usar herramientas como TinyPNG o una librería en Astro.
-- **Librerías para Layouts**: Masonry Layout, CSS Grid, o librerías de animación como Framer Motion para crear efectos visuales.
-- **Integración de Mapas**: Mapbox o Leaflet, para crear el mapa interactivo.
-- **Markdown**: Para almacenar textos en los álbumes profesionales.
+### 1. Basic Project Setup in Astro
+   - Initialize the project in Astro.
+   - Create routes for the main sections:
+     - **Home**
+     - **Albums** (static content)
+     - **Adventures** (dynamic timeline).
+   - Configure the content directory to store professional photos.
+
+### 2. Integration with Google Photos for Adventures
+   - **Connect the Google Photos API** to extract photos with metadata.
+   - Organize the photos by date and group them into “adventures” in the timeline section.
+   - Create a timeline component so the user can scroll chronologically and see adventures by date.
+
+### 3. Image Optimization
+   - **Professional Photos**:
+     - Compress and reduce the resolution of large images to avoid slowing down the site.
+     - Implement `lazy loading` in Astro so images load according to the user's scroll.
+   - **Photos from Google Photos**:
+     - Use API options to request lower resolution versions.
+
+### 4. Layout Design and Variation in the Photo Gallery
+   - **Random Gallery Design**:
+     - Create a more “free” or collage-type layout that varies sizes and positions to avoid a static design.
+     - Explore “Masonry” layouts or use an adaptive CSS grid.
+   - **Scroll Animation**:
+     - Implement transition effects so adventures are progressively shown as you scroll.
+
+### 5. Adventure Map (Advanced Functionality)
+   - **Integration of an Interactive Map**:
+     - Use Mapbox or Leaflet to create a map that marks adventure locations.
+     - Configure the map so that clicking on a pin opens the corresponding album or adventure.
+
+### 6. Add Custom Text and Story Details
+   - **Writing Stories**:
+     - In each album and adventure, add titles, descriptions, and other personalized details.
+     - Texts for professional albums will be in `.md` files, while in adventures it could be integrated from metadata or a database.
+
+### 7. Final Adjustments and Styling
+   - Make final design adjustments to ensure the experience is visually appealing.
+   - Implement responsive design to ensure it works on both mobile devices and desktops.
 
 ---
 
-## Prioridad de Implementación
+## Technical Requirements and Tools
 
-1. **Configuración en Astro y rutas básicas**.
-2. **Integración con Google Photos y organización del timeline**.
-3. **Optimización de las imágenes** para un rendimiento óptimo.
-4. **Diseño y disposición de galería con layouts variados**.
-5. **Mapa de Aventuras** (como extensión a largo plazo).
-6. **Ajustes de contenido y diseño responsive**.
+- **Framework**: Astro, to facilitate static content management.
+- **Authentication**: Set up authentication for the Google Photos API and ensure a data extraction flow.
+- **Image Optimization**: Use tools like TinyPNG or a library in Astro.
+- **Libraries for Layouts**: Masonry Layout, CSS Grid, or animation libraries like Framer Motion to create visual effects.
+- **Map Integration**: Mapbox or Leaflet, to create the interactive map.
+- **Markdown**: To store texts in professional albums.
 
-Este archivo proporciona la visión general, pasos detallados y recursos necesarios para desarrollar el proyecto. ¡Usa cada sección como guía para mantener el enfoque y el flujo en la construcción de la página web! 
+---
+
+## Implementation Priority
+
+1. **Setup in Astro and basic routes**.
+2. **Integration with Google Photos and timeline organization**.
+3. **Image optimization** for optimal performance.
+4. **Gallery design and varied layouts**.
+5. **Adventure Map** (as a long-term extension).
+6. **Content adjustments and responsive design**.
+
+This file provides the overall vision, detailed steps, and resources needed to develop the project. Use each section as a guide to maintain focus and flow in building the website!
+
+---
+
+## Additional Notes
+
+- **Privacy and Security**: Ensure that the data extraction process from Google Photos is secure and that no personal data is exposed.
+- **User Experience**: Optimize the site for fast loading times and ensure a smooth user experience.
+- **Long-term Maintenance**: Plan for regular updates and maintenance to keep the site up-to-date and secure.
+
+---
