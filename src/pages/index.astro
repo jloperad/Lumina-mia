@@ -1,35 +1,29 @@
 ---
-const title = "Inicio";
+import "../styles/tailwind.css";
+import Layout from "../layouts/Layout.astro";
+import GalleryImage from "../components/GalleryImage.astro";
+import "../animations/hide.astro";
+import "../animations/popup.astro";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <link href="/src/styles/tailwind.css" rel="stylesheet">
-  </head>
-  <body class="bg-gray-100 text-gray-900">
-    <header class="bg-white shadow">
-      <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold">Bienvenido a mi Portafolio de Aventura</h1>
+<Layout currentPage="home">
+  <section class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div id="Column-Left" class="flex flex-col gap-6">
+        <GalleryImage image="images/IMG_9724.jpg" loading="eager" />
+        <GalleryImage image="images/IMG_9771.jpg" />
+        <GalleryImage image="images/IMG_9794.jpg" />
       </div>
-    </header>
-    <main>
-      <nav class="bg-gray-200">
-        <ul class="flex justify-center space-x-4 py-4">
-          <li><a href="/albums" class="text-blue-500 hover:text-blue-700">Álbumes</a></li>
-          <li><a href="/adventures" class="text-blue-500 hover:text-blue-700">Aventuras</a></li>
-        </ul>
-      </nav>
-      <section class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <p class="text-center text-lg">Explora mis aventuras y álbumes fotográficos.</p>
-      </section>
-    </main>
-    <footer class="bg-white shadow mt-8">
-      <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-        <p class="text-center text-sm text-gray-500">© 2023 Mi Portafolio de Aventura</p>
+      <div id="Column-Center" class="flex flex-col gap-6">
+        <GalleryImage image="images/IMG_9725.jpg" loading="eager" />
+        <GalleryImage image="images/IMG_9772.jpg" />
+        <GalleryImage image="images/IMG_9805.jpg" />
       </div>
-    </footer>
-  </body>
-</html>
+      <div id="Column-Right" class="flex flex-col gap-6">
+        <GalleryImage image="images/IMG_9726.jpg" loading="eager" />
+        <GalleryImage image="images/IMG_9777.jpg" />
+        <GalleryImage image="images/IMG_9808.jpg" />
+      </div>
+    </div>
+  </section>
+</Layout>
