@@ -15,9 +15,9 @@ const { currentPage } = Astro.props;
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
         <div class="flex-shrink-0">
-          <a href="/Portfolio">
+          <a href="/">
             <Image
-              src="/public/icons/favicon.svg"
+              src="/icons/favicon.svg"
               alt="Logo"
               width={36}
               height={36}
@@ -25,7 +25,7 @@ const { currentPage } = Astro.props;
             />
           </a>
         </div>
-        <a href="/Portfolio">
+        <a href="/">
           <div class="ml-4 text-white text-lg font-bold sm:text-xl">
             Lumina.mia
           </div>
@@ -33,47 +33,23 @@ const { currentPage } = Astro.props;
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-4">
             <a
-              href="/Portfolio"
+              href="/"
               class={`text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${currentPage === "home" ? "underline-lower" : ""}`}
               >Home</a
             >
             <a
-              href="/Portfolio/about"
+              href="/about"
               class={`text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${currentPage === "about" ? "underline-lower" : ""}`}
               >About</a
             >
-            <div class="group relative">
+            {/* <div class="group relative">
             <a
-                href="/Portfolio/collections"
+                href="/collections"
                 class={`flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${currentPage === "collections" ? "underline-lower" : ""}`}
             >
                 Collections
-                <Image
-                    src="/public/icons/chevron-down.svg"
-                    alt="Collections Icon"
-                    width={30}
-                    height={30}
-                    loading="eager"
-                    class="pl-2"
-                />
             </a>
-            <div
-                class="absolute left-0 w-full mt-2 p-2 bg-gray-700 text-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-            >
-                <a
-                    href="/Portfolio/collections/france"
-                    class="block px-2 py-1 hover:bg-gray-800 rounded-md w-full text-left">France</a
-                >
-                <a
-                    href="/Portfolio/collections/sardegna"
-                    class="block px-2 py-1 hover:bg-gray-800 rounded-md w-full text-left"
-                    >Sardegna</a
-                >
-                <a
-                    href="/Portfolio/collections/ireland"
-                    class="block px-2 py-1 hover:bg-gray-800 rounded-md w-full text-left"
-                    >Ireland</a
-                >
+            </div> */}
             </div>
             </div>
           </div>

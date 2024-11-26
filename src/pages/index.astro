@@ -2,28 +2,60 @@
 import "../styles/tailwind.css";
 import Layout from "../layouts/Layout.astro";
 import GalleryImage from "../components/GalleryImage.astro";
+import Spacer from "../components/Spacer.astro";
 import "../animations/hide.astro";
 import "../animations/popup.astro";
 ---
 
 <Layout currentPage="home">
-  <section class="container mx-auto px-4 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div id="Column-Left" class="flex flex-col gap-6">
-        <GalleryImage image="images/IMG_9724.jpg" loading="eager" />
-        <GalleryImage image="images/IMG_9771.jpg" />
-        <GalleryImage image="images/IMG_9794.jpg" />
+  <main class="text-white min-h-screen">
+    <section class="container mx-auto px-4 py-8">
+      <div class="flex justify-center items-center h-screen flex-col">
+        <div class="text-center">
+          <h1 class="text-5xl hide-5">Soy Juan José Lopera</h1>
+        </div>
+        <Spacer size="h-8" />
+        <div class="text-center">
+          <h3 class="text-2xl hide-5">He visto, he vivido, he existido</h3>
+        </div>
       </div>
-      <div id="Column-Center" class="flex flex-col gap-6">
-        <GalleryImage image="images/IMG_9725.jpg" loading="eager" />
-        <GalleryImage image="images/IMG_9772.jpg" />
-        <GalleryImage image="images/IMG_9805.jpg" />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div id="Column-Left" class="flex flex-col gap-6">
+          <GalleryImage image="images/IMG_9724.jpg" loading="eager" />
+          <GalleryImage image="images/IMG_9771.jpg" />
+          <GalleryImage image="images/IMG_9794.jpg" />
+        </div>
+        <div id="Column-Center" class="flex flex-col gap-6">
+          <GalleryImage image="images/IMG_9725.jpg" loading="eager" />
+          <GalleryImage image="images/IMG_9772.jpg" />
+          <GalleryImage image="images/IMG_9805.jpg" />
+        </div>
+        <div id="Column-Right" class="flex flex-col gap-6">
+          <GalleryImage image="images/IMG_9726.jpg" loading="eager" />
+          <GalleryImage image="images/IMG_9777.jpg" />
+          <GalleryImage image="images/IMG_9808.jpg" />
+        </div>
       </div>
-      <div id="Column-Right" class="flex flex-col gap-6">
-        <GalleryImage image="images/IMG_9726.jpg" loading="eager" />
-        <GalleryImage image="images/IMG_9777.jpg" />
-        <GalleryImage image="images/IMG_9808.jpg" />
-      </div>
+    </section>
+
+    <Spacer size="h-72" />
+
+
+    <div class="flex justify-center items-center">
+      <h1 class="text-5xl hide-3">Ponte en contacto!</h1>
     </div>
-  </section>
+
+    <Spacer size="h-24" />
+
+    <div class="flex justify-center items-center mt-4">
+      <p class="text-lg text-center hide-3">
+        Me encantaría saber de ti. No dudes en contactarme en <a
+          href="mailto:morgan@kodelab.fr"
+          style="color: hsl(195, 60%, 60%);">juanjoloperaduque@gmail.com</a
+        >.
+      </p>
+    </div>
+
+    <Spacer size="h-72" />
+  </main>
 </Layout>
