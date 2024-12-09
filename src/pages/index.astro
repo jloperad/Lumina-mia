@@ -5,6 +5,9 @@ import GalleryImage from "../components/GalleryImage.astro";
 import Spacer from "../components/Spacer.astro";
 import "../animations/hide.astro";
 import "../animations/popup.astro";
+import { getImageFiles } from '../utils/get-images'
+
+const [column1, column2, column3] = getImageFiles()
 ---
 
 <Layout currentPage="home">
@@ -19,44 +22,23 @@ import "../animations/popup.astro";
           <h3 class="text-2xl hide-5">He visto, He vivido, He existido.</h3>
         </div>
       </div>
-        <div class="flex flex-col md:flex-row gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="flex flex-col gap-6">
-            <GalleryImage image="images/IMG_7892-2.jpg" loading="eager" />
-            <GalleryImage image="images/IMG_9261-2.jpg" loading="eager" />
-            <GalleryImage image="images/IMG_9856.jpg" loading="eager" />
-            <GalleryImage image="images/IMG_7936.jpg" />
-            <GalleryImage image="images/IMG_9724.jpg" />
-            <GalleryImage image="images/IMG_1030.jpg" />
-            <GalleryImage image="images/IMG_8024-Recuperado.jpg" />
-            <GalleryImage image="images/IMG_9725.jpg" />
-            <GalleryImage image="images/DSC_0521.jpg" />
+            {column1.map((image) => (
+              <GalleryImage image={`images/${image}`} />
+            ))}
           </div>
           <div class="flex flex-col gap-6">
-            <GalleryImage image="images/IMG_8134-2.jpg" />
-            <GalleryImage image="images/IMG_9726.jpg" />
-            <GalleryImage image="images/IMG_0595.jpg" />
-            <GalleryImage image="images/IMG_9021.jpg" />
-            <GalleryImage image="images/IMG_9771.jpg" />
-            <GalleryImage image="images/DSC_0049-Recovered-Recovered.jpg" />
-            <GalleryImage image="images/IMG_9026.jpg" />
-            <GalleryImage image="images/IMG_9772.jpg" />
-            <GalleryImage image="images/DSC_0277-2.jpg" />
+            {column2.map((image) => (
+              <GalleryImage image={`images/${image}`} />
+            ))}
           </div>
           <div class="flex flex-col gap-6">
-            <GalleryImage image="images/IMG_9158.jpg" />
-            <GalleryImage image="images/IMG_9777.jpg" />
-            <GalleryImage image="images/DSC_0322.jpg" />
-            <GalleryImage image="images/IMG_9161.jpg" />
-            <GalleryImage image="images/IMG_9794.jpg" />
-            <GalleryImage image="images/Sin título-1.jpg" />
-            <GalleryImage image="images/IMG_9164.jpg" />
-            <GalleryImage image="images/IMG_9797.jpg" />
-            <GalleryImage image="images/Sin título-2.jpg" />
-            <GalleryImage image="images/IMG_9165.jpg" />
-            <GalleryImage image="images/IMG_9805.jpg" />
-            <GalleryImage image="images/IMG_9171.jpg" />
+            {column3.map((image) => (
+              <GalleryImage image={`images/${image}`} />
+            ))}
           </div>
-      </div>
+        </div>
     </section>
 
     <Spacer size="h-72" />
