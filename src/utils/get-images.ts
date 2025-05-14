@@ -19,14 +19,3 @@ export function getImageFiles() {
 
   return columns;
 }
-
-export async function reduceImageSize(imagePath: string, outputPath: string, quality: number = 80) {
-  try {
-    await sharp(imagePath)
-      .jpeg({ quality })
-      .png({ quality })
-      .toFile(outputPath);
-  } catch (error) {
-    console.error(`Error reducing image size for ${imagePath}:`, error);
-  }
-}
