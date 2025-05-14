@@ -7,7 +7,7 @@ import "../animations/hide.astro";
 import "../animations/popup.astro";
 import { getImageFiles } from '../utils/get-images'
 
-const [column1, column2, column3] = getImageFiles()
+const [column1, column2, column3] = await getImageFiles()
 ---
 
 <Layout currentPage="home">
