@@ -5,9 +5,9 @@ import GalleryImage from "../components/GalleryImage.astro";
 import Spacer from "../components/Spacer.astro";
 import "../animations/hide.astro";
 import "../animations/popup.astro";
-import { getImageFiles } from '../utils/get-images'
+import { getImageFiles } from '../utils/get-images';
 
-const [column1, column2, column3] = await getImageFiles()
+const [column1, column2, column3] = await getImageFiles();
 ---
 
 <Layout currentPage="home">
@@ -22,50 +22,41 @@ const [column1, column2, column3] = await getImageFiles()
           <h3 class="text-2xl hide-5">He visto, He vivido, He existido.</h3>
         </div>
       </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="flex flex-col gap-6">
-            {column1.map((image) => (
-              <GalleryImage image={`images/${image}`} />
-            ))}
-          </div>
-          <div class="flex flex-col gap-6">
-            {column2.map((image) => (
-              <GalleryImage image={`images/${image}`} />
-            ))}
-          </div>
-          <div class="flex flex-col gap-6">
-            {column3.map((image) => (
-              <GalleryImage image={`images/${image}`} />
-            ))}
-          </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="flex flex-col gap-6">
+          {column1.map(src => (
+            <GalleryImage image={src} />
+          ))}
         </div>
+        <div class="flex flex-col gap-6">
+          {column2.map(src => (
+            <GalleryImage image={src} />
+          ))}
+        </div>
+        <div class="flex flex-col gap-6">
+          {column3.map(src => (
+            <GalleryImage image={src} />
+          ))}
+        </div>
+      </div>
     </section>
 
     <Spacer size="h-72" />
-
     <div class="flex justify-center items-center">
       <h1 class="text-5xl hide-3">Ponte en contacto!</h1>
     </div>
-
     <Spacer size="h-8" />
-
     <div class="flex justify-center items-center mt-4">
       <p class="text-lg text-center hide-3">
-        Contactame en <a
-          href="mailto:morgan@kodelab.fr"
-          style="color: hsl(195, 60%, 60%);">juanjoloperaduque@gmail.com</a
-        >.
+        Contáctame en <a href="mailto:juanjoloperaduque@gmail.com" style="color: hsl(195, 60%, 60%);">juanjoloperaduque@gmail.com</a>.
       </p>
     </div>
-
     <Spacer size="h-8" />
-
     <div class="flex justify-center items-center mt-4">
       <a href="https://instagram.com/lopera.rar" target="_blank" rel="noopener noreferrer">
         <img src="/icons/instagram.svg" alt="Instagram Icon" class="w-8 h-8 text-white hide-3" />
       </a>
     </div>
-
     <Spacer size="h-72" />
   </main>
 </Layout>
